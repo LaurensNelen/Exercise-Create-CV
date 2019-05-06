@@ -1,7 +1,33 @@
+$BodyBackgroundColor: #8AC8FF;
+$SideBackgroundColor: #0068EB;
+$MainBackgroundColor: #3179FF;
+
+$TextColor: darkblue;
+
+$MarginTitleSide: 5%;
+$MarginTitleHeight: 5%;
+$MarginSubSide: 10%;
+$MarginSubHeight:5%;
+
+%FullCircle {
+    border-radius: 50%;
+    background-color: darkblue;
+}
+
+%EmptyCircle {
+    border-radius: 50%;
+    background-color: #3179FF;
+}
+
+%FlexVertical {
+    display: flex;
+    flex-direction: column;
+}
+
 .Container {
     display: grid;
     grid-template-areas: ". Profile .";
-    background-color: lightgrey;
+    background-color: $BodyBackgroundColor;
     font-size: 20px;
     grid-template-columns: 10% 70% 1fr;
 }
@@ -9,86 +35,114 @@
 .Profile {
     grid-area: Profile;
     display: grid;
-    grid-template-areas: "ProfilePicture Title" "PersonalInfo AboutMe" "ProgrammingLanguages EducationHistory" "Languages WorkExperience" "Hobbies CurrentStatus";
+    grid-template-areas: "ProfilePicture Title""PersonalInfo AboutMe""ProgrammingLanguages EducationHistory""Languages WorkExperience""Hobbies CurrentStatus";
     grid-template-columns: 40% 60%;
+}
+
+.Main-item1,
+.Main-item2,
+.Main-item3,
+.Main-item4,
+.Main-item5 {
+    color: $TextColor;
+    background-color: $MainBackgroundColor;
+
 }
 
 .Main-item1 {
     grid-area: Title;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 50% 1fr;
-    grid-template-rows: 1fr 50% 1fr;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.Main-item1 h1 {
-    font-weight: bold;
-    font-size: 300%;
-    grid-column: 2;
-    grid-row: 2;
+    h1 {
+        font-weight: bold;
+        font-size: 300%;
+        max-width: 50%;
+    }
 }
 
 .Main-item2 {
     grid-area: AboutMe;
+
+    p {
+        margin-left: $MarginSubSide;
+    }
 }
 
 .Main-item3 {
     grid-area: EducationHistory;
-    display: flex;
-    flex-direction: column
-}
+    @extend %FlexVertical;
 
-.Main-item3 .Education-History {
-    margin: 5%;
-}
+    .Education-History {
+        margin: $MarginSubHeight $MarginSubSide $MarginSubHeight $MarginSubSide;
+    }
 
-.Main-item3 .jaar {
-    float: right;
-    color: darkred;
+    .jaar {
+        float: right;
+        font-weight: bold;
+    }
 }
 
 .Main-item4 {
     grid-area: WorkExperience;
+
+    p {
+        margin-left: $MarginSubSide;
+    }
 }
 
 .Main-item5 {
     grid-area: CurrentStatus;
+
+    p {
+        margin-left: $MarginSubSide;
+    }
+}
+
+.Side-item1,
+.Side-item2,
+.Side-item3,
+.Side-item4,
+.Side-item5 {
+    color: $TextColor;
+    background-color: $SideBackgroundColor;
 }
 
 .Side-item1 {
     grid-area: ProfilePicture;
-}
+    
 
-.Side-item1 img {
-    width: 50%;
-    height: auto;
-    margin-right: 25%;
-    margin-left: 25%;
-    grid-row: 1;
-    grid-column: 1;
-    border-radius: 50%;
+    img {
+        width: 50%;
+        height: auto;
+        margin-right: 25%;
+        margin-left: 25%;
+        grid-row: 1;
+        grid-column: 1;
+        border-radius: 50%;
+    }
 }
 
 .Side-item2 {
     grid-area: PersonalInfo;
-    display: flex;
-    flex-direction: column;
-}
-
-.Side-item2 .infolist {
-    margin: 5%;
+    @extend %FlexVertical;
+    background-color: $SideBackgroundColor;
+    .infolist {
+        margin: $MarginSubHeight $MarginSubSide $MarginSubHeight $MarginSubSide;
+    }
 }
 
 .Side-item3 {
     grid-area: ProgrammingLanguages;
-    display: flex;
-    flex-direction: column;
+    @extend %FlexVertical;
+    background-color: $SideBackgroundColor;
 }
 
 .list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 5%;
+    margin: $MarginSubHeight $MarginSubSide $MarginSubHeight $MarginSubSide;
 }
 
 .sublist {
@@ -102,96 +156,70 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.g1 {
-    border-radius: 50%;
+.FullCircleGrid1 {
+    @extend %FullCircle;
     grid-column: 1;
-    background-color: darkred;
 }
 
-.g2 {
-    border-radius: 50%;
+.FullCircleGrid2 {
+    @extend %FullCircle;
     grid-column: 2;
-    background-color: darkred;
 }
 
-.g3 {
-    border-radius: 50%;
+.FullCircleGrid3 {
+    @extend %FullCircle;
     grid-column: 3;
-    background-color: darkred;
 }
 
-.g03 {
-    border-radius: 50%;
+.FullCircleGrid4 {
+    @extend %FullCircle;
+    grid-column: 4;
+}
+
+.FullCircleGrid5 {
+    @extend %FullCircle;
+    grid-column: 5;
+}
+
+.EmptyCircleGrid3 {
+    @extend %EmptyCircle;
     grid-column: 3;
-    background-color: white;
 }
 
-.g4 {
-    border-radius: 50%;
+.EmptyCircleGrid4 {
+    @extend %EmptyCircle;
     grid-column: 4;
-    background-color: darkred;
 }
 
-.g04 {
-    border-radius: 50%;
-    grid-column: 4;
-    background-color: white;
-}
-
-.g5 {
-    border-radius: 50%;
+.EmptyCircleGrid5 {
+    @extend %EmptyCircle;
     grid-column: 5;
-    background-color: darkred;
-}
-
-.g05 {
-    border-radius: 50%;
-    grid-column: 5;
-    background-color: white;
 }
 
 .Side-item4 {
     grid-area: Languages;
-    display: flex;
-    flex-direction: column;
+    @extend %FlexVertical;
+    background-color: $SideBackgroundColor;
 }
 
 .Side-item5 {
     grid-area: Hobbies;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    @extend %FlexVertical;
+    background-color: $SideBackgroundColor;
 }
 
 ul {
     list-style-position: inside;
-    margin-left: 5%;
-}
+    margin-left: $MarginSubSide;
 
-ul li {
-    list-style-type: circle;
-}
-
-h1, h2 {
-    color: darkred;
+    li {
+        list-style-type: circle;
+    }
 }
 
 h2 {
     font-size: 200%;
-    margin-bottom: 5%;
-    margin-top: 5%;
-}
-
-.Side-item1, .Side-item2, .Side-item3, .Side-item4, .Side-item5 {
-    background-color: lightblue;
-}
-
-.Main-item1, .Main-item2, .Main-item3, .Main-item4, .Main-item5 {
-    background-color: white;
-}
-
-.Main-item2 p, .Main-item4 p, .Main-item5 p {
-    margin-left: 5%;
+    margin: $MarginTitleHeight $MarginTitleSide $MarginTitleHeight $MarginTitleSide;
 }
 
 @media screen and (max-width: 1224px) {
@@ -205,20 +233,22 @@ h2 {
         font-size: 20px;
         grid-template-areas: "Profile Profile Profile";
     }
+
     .Profile {
-        grid-template-areas: "Title Title" "ProfilePicture ProfilePicture" "PersonalInfo PersonalInfo" "AboutMe AboutMe" "ProgrammingLanguages ProgrammingLanguages" "Languages Languages" "Hobbies Hobbies" "EducationHistory EducationHistory" "WorkExperience WorkExperience" "CurrentStatus CurrentStatus";
+        grid-template-areas: "Title Title""ProfilePicture ProfilePicture""PersonalInfo PersonalInfo""AboutMe AboutMe""ProgrammingLanguages ProgrammingLanguages""Languages Languages""Hobbies Hobbies""EducationHistory EducationHistory""WorkExperience WorkExperience""CurrentStatus CurrentStatus";
     }
-    .Main-item1, .Main-item2, .Main-item3, .Main-item4, .Main-item5 {
-        background-color: lightblue;
+
+    .Main-item1,
+    .Main-item2,
+    .Main-item3,
+    .Main-item4,
+    .Main-item5 {
+        background-color: $SideBackgroundColor;
+        color: $TextColor;
     }
-    .Main-item1 h1 {
-        margin-bottom: 30%;
-    }
-    h2 {
-        margin-left: 5%;
-    }
-    .Main-item2 p, .Main-item5 p, .Main-item4 p, .Main-item3 .Education-History, .Side-item2 .infolist, .Side-item5 ul, .Side-item3 .sublist, .Side-item4 .sublist {
-        margin-left: 10%;
+    h1
+    {
+        margin: $MarginTitleHeight $MarginTitleSide $MarginTitleHeight $MarginTitleSide;
     }
 }
 
