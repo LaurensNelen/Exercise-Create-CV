@@ -1,0 +1,235 @@
+.Container {
+    display: grid;
+    grid-template-areas: ". Profile .";
+    background-color: lightgrey;
+    font-size: 20px;
+    grid-template-columns: 10% 70% 1fr;
+}
+
+.Profile {
+    grid-area: Profile;
+    display: grid;
+    grid-template-areas: "ProfilePicture Title" "PersonalInfo AboutMe" "ProgrammingLanguages EducationHistory" "Languages WorkExperience" "Hobbies CurrentStatus";
+    grid-template-columns: 40% 60%;
+}
+
+.Main-item1 {
+    grid-area: Title;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+    grid-template-rows: 1fr 50% 1fr;
+}
+
+.Main-item1 h1 {
+    font-weight: bold;
+    font-size: 300%;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.Main-item2 {
+    grid-area: AboutMe;
+}
+
+.Main-item3 {
+    grid-area: EducationHistory;
+    display: flex;
+    flex-direction: column
+}
+
+.Main-item3 .Education-History {
+    margin: 5%;
+}
+
+.Main-item3 .jaar {
+    float: right;
+    color: darkred;
+}
+
+.Main-item4 {
+    grid-area: WorkExperience;
+}
+
+.Main-item5 {
+    grid-area: CurrentStatus;
+}
+
+.Side-item1 {
+    grid-area: ProfilePicture;
+}
+
+.Side-item1 img {
+    width: 50%;
+    height: auto;
+    margin-right: 25%;
+    margin-left: 25%;
+    grid-row: 1;
+    grid-column: 1;
+    border-radius: 50%;
+}
+
+.Side-item2 {
+    grid-area: PersonalInfo;
+    display: flex;
+    flex-direction: column;
+}
+
+.Side-item2 .infolist {
+    margin: 5%;
+}
+
+.Side-item3 {
+    grid-area: ProgrammingLanguages;
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5%;
+}
+
+.sublist {
+    grid-column: 1;
+}
+
+.grades {
+    grid-column: 2;
+    display: grid;
+    grid-column-gap: 7.5%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.g1 {
+    border-radius: 50%;
+    grid-column: 1;
+    background-color: darkred;
+}
+
+.g2 {
+    border-radius: 50%;
+    grid-column: 2;
+    background-color: darkred;
+}
+
+.g3 {
+    border-radius: 50%;
+    grid-column: 3;
+    background-color: darkred;
+}
+
+.g03 {
+    border-radius: 50%;
+    grid-column: 3;
+    background-color: white;
+}
+
+.g4 {
+    border-radius: 50%;
+    grid-column: 4;
+    background-color: darkred;
+}
+
+.g04 {
+    border-radius: 50%;
+    grid-column: 4;
+    background-color: white;
+}
+
+.g5 {
+    border-radius: 50%;
+    grid-column: 5;
+    background-color: darkred;
+}
+
+.g05 {
+    border-radius: 50%;
+    grid-column: 5;
+    background-color: white;
+}
+
+.Side-item4 {
+    grid-area: Languages;
+    display: flex;
+    flex-direction: column;
+}
+
+.Side-item5 {
+    grid-area: Hobbies;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+ul {
+    list-style-position: inside;
+    margin-left: 5%;
+}
+
+ul li {
+    list-style-type: circle;
+}
+
+h1, h2 {
+    color: darkred;
+}
+
+h2 {
+    font-size: 200%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.Side-item1, .Side-item2, .Side-item3, .Side-item4, .Side-item5 {
+    background-color: lightblue;
+}
+
+.Main-item1, .Main-item2, .Main-item3, .Main-item4, .Main-item5 {
+    background-color: white;
+}
+
+.Main-item2 p, .Main-item4 p, .Main-item5 p {
+    margin-left: 5%;
+}
+
+@media screen and (max-width: 1224px) {
+    .Container {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 878px) {
+    .Container {
+        font-size: 20px;
+        grid-template-areas: "Profile Profile Profile";
+    }
+    .Profile {
+        grid-template-areas: "Title Title" "ProfilePicture ProfilePicture" "PersonalInfo PersonalInfo" "AboutMe AboutMe" "ProgrammingLanguages ProgrammingLanguages" "Languages Languages" "Hobbies Hobbies" "EducationHistory EducationHistory" "WorkExperience WorkExperience" "CurrentStatus CurrentStatus";
+    }
+    .Main-item1, .Main-item2, .Main-item3, .Main-item4, .Main-item5 {
+        background-color: lightblue;
+    }
+    .Main-item1 h1 {
+        margin-bottom: 30%;
+    }
+    h2 {
+        margin-left: 5%;
+    }
+    .Main-item2 p, .Main-item5 p, .Main-item4 p, .Main-item3 .Education-History, .Side-item2 .infolist, .Side-item5 ul, .Side-item3 .sublist, .Side-item4 .sublist {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 344px) {
+    .Container {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 254px) {
+    .Container {
+        font-size: 12px;
+    }
+}

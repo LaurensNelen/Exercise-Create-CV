@@ -1,0 +1,291 @@
+.Main-item3, .Side-item2, .Side-item3, .Side-item4, .Side-item5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.Container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: ". Profile .";
+  background-color: #1B2CF5;
+  font-size: 20px;
+  -ms-grid-columns: 10% 70% 1fr;
+  grid-template-columns: 10% 70% 1fr;
+}
+
+.Profile {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Profile;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "ProfilePicture Title" "PersonalInfo AboutMe" "ProgrammingLanguages EducationHistory" "Languages WorkExperience" "Hobbies CurrentStatus";
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+}
+
+.Main-item1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Title;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #9CAAFF;
+  color: #404BFF;
+}
+
+.Main-item1 h1 {
+  width: 50%;
+  font-weight: bold;
+  font-size: 300%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.Main-item2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: AboutMe;
+  background-color: #9CAAFF;
+  color: #404BFF;
+}
+
+.Main-item2 p {
+  margin-left: 10%;
+}
+
+.Main-item3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: EducationHistory;
+  background-color: #9CAAFF;
+  color: #404BFF;
+}
+
+.Main-item3 .Education-History {
+  margin: 5% 10% 5% 10%;
+}
+
+.Main-item3 .jaar {
+  float: right;
+}
+
+.Main-item4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: WorkExperience;
+  background-color: #9CAAFF;
+  color: #404BFF;
+}
+
+.Main-item4 p {
+  margin-left: 10%;
+}
+
+.Main-item5 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: CurrentStatus;
+  background-color: #9CAAFF;
+  color: #404BFF;
+}
+
+.Main-item5 p {
+  margin-left: 10%;
+}
+
+.Side-item1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: ProfilePicture;
+  background-color: #404BFF;
+  color: #9CAAFF;
+}
+
+.Side-item1 img {
+  width: 50%;
+  height: auto;
+  margin-right: 25%;
+  margin-left: 25%;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  border-radius: 50%;
+}
+
+.Side-item2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: PersonalInfo;
+  background-color: #404BFF;
+  color: #9CAAFF;
+}
+
+.Side-item2 .infolist {
+  margin: 5% 10% 5% 10%;
+}
+
+.Side-item3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: ProgrammingLanguages;
+  background-color: #404BFF;
+  color: #9CAAFF;
+}
+
+.list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin: 5% 10% 5% 10%;
+}
+
+.sublist {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.grades {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 7.5%;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.circle-full-grid-1, .circle-full-grid-2, .circle-full-grid-3, .circle-full-grid-4, .circle-full-grid-5 {
+  border-radius: 50%;
+  background-color: #9CAAFF;
+}
+
+.circle-empty-grid-3, .circle-empty-grid-4, .circle-empty-grid-5 {
+  border-radius: 50%;
+  background-color: #1B2CF5;
+}
+
+.circle-full-grid-1 {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.circle-full-grid-2 {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.circle-full-grid-3 {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+.circle-full-grid-4 {
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+.circle-full-grid-5 {
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+.circle-empty-grid-3 {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+.circle-empty-grid-4 {
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+.circle-empty-grid-5 {
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+.Side-item4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: Languages;
+  background-color: #404BFF;
+  color: #9CAAFF;
+}
+
+.Side-item5 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: Hobbies;
+  background-color: #404BFF;
+  color: #9CAAFF;
+}
+
+ul {
+  list-style-position: inside;
+  margin-left: 10%;
+}
+
+ul li {
+  list-style-type: circle;
+}
+
+h2 {
+  font-size: 200%;
+  margin: 5% 5% 5% 5%;
+}
+
+@media screen and (max-width: 1224px) {
+  .Container {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 878px) {
+  .Container {
+    font-size: 20px;
+        grid-template-areas: "Profile Profile Profile";
+  }
+  .Profile {
+        grid-template-areas: "Title Title" "ProfilePicture ProfilePicture" "PersonalInfo PersonalInfo" "AboutMe AboutMe" "ProgrammingLanguages ProgrammingLanguages" "Languages Languages" "Hobbies Hobbies" "EducationHistory EducationHistory" "WorkExperience WorkExperience" "CurrentStatus CurrentStatus";
+  }
+  .Main-item1, .Main-item2, .Main-item3, .Main-item4, .Main-item5 {
+    background-color: #404BFF;
+    color: #9CAAFF;
+  }
+  .Main-item1 h1 {
+    margin: 5% 5% 5% 5%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 344px) {
+  .Container {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 254px) {
+  .Container {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
