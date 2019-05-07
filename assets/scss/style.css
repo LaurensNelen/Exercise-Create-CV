@@ -1,11 +1,11 @@
 .FullCircleGrid1, .FullCircleGrid2, .FullCircleGrid3, .FullCircleGrid4, .FullCircleGrid5 {
   border-radius: 50%;
-  background-color: darkblue;
+  background-color: #ecdce9;
 }
 
 .EmptyCircleGrid3, .EmptyCircleGrid4, .EmptyCircleGrid5 {
   border-radius: 50%;
-  background-color: #3179FF;
+  background-color: #a55265;
 }
 
 .Main-item3, .Side-item2, .Side-item3, .Side-item4, .Side-item5 {
@@ -18,20 +18,22 @@
           flex-direction: column;
 }
 
-.Container {
+.container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: ". Profile .";
-  background-color: #8AC8FF;
+      grid-template-areas: " . profilecontent . ";
+  background-color: #12171a;
   font-size: 20px;
   -ms-grid-columns: 10% 70% 1fr;
       grid-template-columns: 10% 70% 1fr;
+  font-family: 'Sofia', cursive;
 }
 
 .Profile {
+  z-index: 1;
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  grid-area: Profile;
+  grid-area: profilecontent;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "ProfilePicture Title" "PersonalInfo AboutMe" "ProgrammingLanguages EducationHistory" "Languages WorkExperience" "Hobbies CurrentStatus";
@@ -44,8 +46,8 @@
 .Main-item3,
 .Main-item4,
 .Main-item5 {
-  color: darkblue;
-  background-color: #3179FF;
+  color: #ecdce9;
+  background-color: #a55265;
 }
 
 .Main-item1 {
@@ -119,8 +121,8 @@
 .Side-item3,
 .Side-item4,
 .Side-item5 {
-  color: darkblue;
-  background-color: #0068EB;
+  color: #ecdce9;
+  background-color: #335449;
 }
 
 .Side-item1 {
@@ -145,7 +147,7 @@
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: PersonalInfo;
-  background-color: #0068EB;
+  background-color: #335449;
 }
 
 .Side-item2 .infolist {
@@ -156,7 +158,7 @@
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: ProgrammingLanguages;
-  background-color: #0068EB;
+  background-color: #335449;
 }
 
 .list {
@@ -226,14 +228,14 @@
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: Languages;
-  background-color: #0068EB;
+  background-color: #335449;
 }
 
 .Side-item5 {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: Hobbies;
-  background-color: #0068EB;
+  background-color: #335449;
 }
 
 ul {
@@ -251,15 +253,15 @@ h2 {
 }
 
 @media screen and (max-width: 1224px) {
-  .Container {
+  .container {
     font-size: 17px;
   }
 }
 
 @media screen and (max-width: 878px) {
-  .Container {
+  .container {
     font-size: 20px;
-        grid-template-areas: "Profile Profile Profile";
+        grid-template-areas: "profilecontent profilecontent profilecontent";
   }
   .Profile {
         grid-template-areas: "Title Title" "ProfilePicture ProfilePicture" "PersonalInfo PersonalInfo" "AboutMe AboutMe" "ProgrammingLanguages ProgrammingLanguages" "Languages Languages" "Hobbies Hobbies" "EducationHistory EducationHistory" "WorkExperience WorkExperience" "CurrentStatus CurrentStatus";
@@ -269,8 +271,8 @@ h2 {
   .Main-item3,
   .Main-item4,
   .Main-item5 {
-    background-color: #0068EB;
-    color: darkblue;
+    background-color: #335449;
+    color: #ecdce9;
   }
   h1 {
     margin: 5% 5% 5% 5%;
@@ -278,13 +280,13 @@ h2 {
 }
 
 @media screen and (max-width: 344px) {
-  .Container {
+  .container {
     font-size: 15px;
   }
 }
 
 @media screen and (max-width: 254px) {
-  .Container {
+  .container {
     font-size: 12px;
   }
 }

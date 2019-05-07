@@ -1,22 +1,23 @@
-$BodyBackgroundColor: #8AC8FF;
-$SideBackgroundColor: #0068EB;
-$MainBackgroundColor: #3179FF;
+$BodyBackgroundColor: #12171a;
+$SideBackgroundColor: #335449;
+$MainBackgroundColor: #a55265;
 
-$TextColor: darkblue;
+$TextColor: #ecdce9;
 
 $MarginTitleSide: 5%;
 $MarginTitleHeight: 5%;
 $MarginSubSide: 10%;
 $MarginSubHeight:5%;
 
+
 %FullCircle {
     border-radius: 50%;
-    background-color: darkblue;
+    background-color: #ecdce9;
 }
 
 %EmptyCircle {
     border-radius: 50%;
-    background-color: #3179FF;
+    background-color: #a55265;
 }
 
 %FlexVertical {
@@ -24,16 +25,18 @@ $MarginSubHeight:5%;
     flex-direction: column;
 }
 
-.Container {
+.container {
     display: grid;
-    grid-template-areas: ". Profile .";
+    grid-template-areas: " . profilecontent . ";
     background-color: $BodyBackgroundColor;
     font-size: 20px;
     grid-template-columns: 10% 70% 1fr;
+    font-family: 'Sofia', cursive;
 }
 
 .Profile {
-    grid-area: Profile;
+    z-index: 1;
+    grid-area: profilecontent;
     display: grid;
     grid-template-areas: "ProfilePicture Title""PersonalInfo AboutMe""ProgrammingLanguages EducationHistory""Languages WorkExperience""Hobbies CurrentStatus";
     grid-template-columns: 40% 60%;
@@ -223,15 +226,15 @@ h2 {
 }
 
 @media screen and (max-width: 1224px) {
-    .Container {
+    .container {
         font-size: 17px;
     }
 }
 
 @media screen and (max-width: 878px) {
-    .Container {
+    .container {
         font-size: 20px;
-        grid-template-areas: "Profile Profile Profile";
+        grid-template-areas: "profilecontent profilecontent profilecontent";
     }
 
     .Profile {
@@ -253,13 +256,13 @@ h2 {
 }
 
 @media screen and (max-width: 344px) {
-    .Container {
+    .container {
         font-size: 15px;
     }
 }
 
 @media screen and (max-width: 254px) {
-    .Container {
+    .container {
         font-size: 12px;
     }
 }
